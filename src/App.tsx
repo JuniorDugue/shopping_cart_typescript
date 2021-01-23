@@ -6,6 +6,7 @@ import Badge from "@material-ui/core/Badge";
 import React, { useState } from "react";
 import { useQuery } from "react-query";
 import { Wrapper } from "./styles/App.styles";
+import Item from "./item/Item";
 
 // types
 export type CartItemType = {
@@ -26,7 +27,7 @@ function App() {
 
   const getTotalItems = () => null;
 
-  const handeAddToCart = () => null;
+  const handleAddToCart = (clickedItem: CartItemType) => null;
 
   const handleRemoveFromCart = () => null;
 
@@ -34,9 +35,16 @@ function App() {
   if (error) return <div>Something went wrong ...</div>;
 
   return (
-    <>
+    <Wrapper>
       <h1>Shopping Cart w/TypeScript</h1>
-    </>
+      <Grid container spacing={3}>
+        {data?.map((item) => (
+          <Grid item key={item.id} xs={12} sm={4}>
+            <Item item={item} handleAddToCart={handleAddToCart} />
+          </Grid>
+        ))}
+      </Grid>
+    </Wrapper>
   );
 }
 

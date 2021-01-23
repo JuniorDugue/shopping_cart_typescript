@@ -1,6 +1,13 @@
 # Shopping Cart w/Typescript
 
-- api: https://fakestoreapi.com/
+## API:
+- [Fake Store API](https://fakestoreapi.com/)
+
+## Tech Stack:
+- [TypeScript](https://www.typescriptlang.org/)
+- [React Query](https://react-query.tanstack.com/)
+- [Material UI](https://material-ui.com/)
+- [Styled Components](https://styled-components.com/docs/api)
 
 ---
 
