@@ -1,12 +1,15 @@
+import React, { useState } from "react";
+import { useQuery } from "react-query";
+// component
+import Item from "./item/Item";
+import Cart from "./Cart/Cart";
+// styles
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Drawer from "@material-ui/core/Drawer";
 import Grid from "@material-ui/core/Grid";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import Badge from "@material-ui/core/Badge";
-import React, { useState } from "react";
-import { useQuery } from "react-query";
 import { Wrapper, StyledButton } from "./styles/App.styles";
-import Item from "./item/Item";
 
 // types
 export type CartItemType = {
@@ -39,7 +42,7 @@ function App() {
   return (
     <Wrapper>
       <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
-        Cart goes here
+        <Cart cartItems={cartItems} addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart} />
       </Drawer>
       <StyledButton onClick={() => setCartOpen(true)}>
         <Badge badgeContent={getTotalItems(cartItems)} color="error">
