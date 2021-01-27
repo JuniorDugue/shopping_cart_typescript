@@ -1,4 +1,4 @@
-# Shopping Cart w/Typescript
+# Shopping Cart w/TypeScript
 
 ## API:
 - [Fake Store API](https://fakestoreapi.com/)
